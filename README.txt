@@ -24,5 +24,5 @@ The following tests have been created:
 5. Columbus Crew should be awarded 54 points for a 16 win 6 tie season
 6. 2 Teams with equal wins and ties should have the same amount of points
 7. A team with 2 wins and no ties should be ranked higher than a team with 1 win and 3 ties even though point totals are equal
-8. League should be sorted properly (test not working, not using Mockito correctly) 
+8. League should be sorted in proper order based on points 
 
