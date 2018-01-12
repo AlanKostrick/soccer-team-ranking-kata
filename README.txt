@@ -25,4 +25,5 @@ The following tests have been created:
 6. 2 Teams with equal wins and ties should have the same amount of points
 7. A team with 2 wins and no ties should be ranked higher than a team with 1 win and 3 ties even though point totals are equal
 8. League should be sorted in proper order based on points 
+9. League should be sorted in proper order based on points with wins tiebreaker
 
