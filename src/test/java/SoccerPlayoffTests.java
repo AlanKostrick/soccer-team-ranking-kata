@@ -96,5 +96,25 @@ public class SoccerPlayoffTests {
 		assertEquals("Columbus", league.getTeamName(2));
 
 	}
+	
+	@Test
+	public void sortBySeasonPointTotalWithWinsTieBreakerBetweenTorontoAndNy() {
+		SoccerTeam columbus = new SoccerTeam("Columbus", 1, 2);
+		SoccerTeam ny = new SoccerTeam("NY", 1, 3);
+		SoccerTeam toronto = new SoccerTeam("Toronto", 2, 0);
+
+		League league = new League();
+		league.addTeam(columbus);
+		league.addTeam(ny);
+		league.addTeam(toronto);
+
+		league.showLeagueRankings();
+
+		// check for teams in order of rank in the sorted list
+		assertEquals("Toronto", league.getTeamName(0));
+		assertEquals("NY", league.getTeamName(1));
+		assertEquals("Columbus", league.getTeamName(2));
+
+	}
 
 }
