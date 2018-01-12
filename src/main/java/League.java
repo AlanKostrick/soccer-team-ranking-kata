@@ -17,4 +17,9 @@ public class League {
 		return teams;
 	}
 
+	public String getTeamName(int index) {
+		String teamName = teams.get(index).getTeamName();
+		return teamName;
+	}
+
 }

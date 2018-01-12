@@ -1,8 +1,4 @@
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 public class SoccerPlayoffTests {
@@ -83,18 +79,21 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void sortBySeasonPointTotal() {
-		ArrayList<SoccerTeam> teams = new ArrayList<>();
+		SoccerTeam columbus = new SoccerTeam("Columbus", 1, 1);
+		SoccerTeam ny = new SoccerTeam("NY", 2, 2);
+		SoccerTeam toronto = new SoccerTeam("Toronto", 3, 3);
+
 		League league = new League();
+		league.addTeam(columbus);
+		league.addTeam(ny);
+		league.addTeam(toronto);
 
-		teams.add(new SoccerTeam("Columbus", 16, 6));
-		teams.add(new SoccerTeam("Toronto", 20, 9));
-		teams.add(new SoccerTeam("NY", 19, 9));
+		league.showLeagueRankings();
 
-		when(league.showLeagueRankings()).thenReturn(teams);
-
-		assertEquals("Toronto", teams.get(0).getTeamName());
-		assertEquals("NY", teams.get(1).getTeamName());
-		assertEquals("Columbus", teams.get(2).getTeamName());
+		// check for teams in order of rank in the sorted list
+		assertEquals("Toronto", league.getTeamName(0));
+		assertEquals("NY", league.getTeamName(1));
+		assertEquals("Columbus", league.getTeamName(2));
 
 	}
 
