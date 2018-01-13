@@ -1,10 +1,12 @@
+## A Soccer Scoring Kata
+
 In Major League Soccer, the top 6 ranked teams in each conference make the play-offs.
 
-Ranking:
+**Ranking:**
 In order to earn ranking a team must score "points". A team gets 3 points for every win and
 one point for every tie. Losses give no points.
 
-Tie-breakers:
+**Tie-breakers:**
 Sometimes teams can tie in points at the end of the season. If this happens, there are tie-breakers,
 These tie-breakers happen in the following order:
 - More Wins
@@ -17,7 +19,7 @@ These tie-breakers happen in the following order:
 Your job is to create an application that sorts teams in order based on points.
 
 
-The following tests have been created:
+**The following tests have been created:**
 
 1. Create a Soccer Team
 2. Create a Soccer Team with Data
