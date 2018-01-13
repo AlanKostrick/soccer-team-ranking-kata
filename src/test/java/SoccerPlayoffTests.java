@@ -1,25 +1,35 @@
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class SoccerPlayoffTests {
 
+	SoccerTeam underTest;
+	SoccerTeam underTest2;
+
+	@Before
+	public void setup() {
+		underTest = new SoccerTeam();
+		underTest2 = new SoccerTeam();
+	}
+
 	@Test
 	public void shouldCreateASoccerTeam() {
-		SoccerTeam underTest = new SoccerTeam();
 
 		assertNotNull(underTest);
 	}
 
 	@Test
 	public void shouldCreateASoccerTeamWithData() {
-		SoccerTeam underTest = new SoccerTeam(null, 0, 0);
+		underTest = new SoccerTeam("", 0, 0);
 
 		assertNotNull(underTest);
 	}
 
 	@Test
 	public void assertThatPointsIsThreeWithOneWin() {
-		SoccerTeam underTest = new SoccerTeam("Columbus Crew", 1, 0);
+		underTest = new SoccerTeam("", 1, 0);
 		int check = underTest.seasonPointTotal();
 
 		assertEquals(3, check);
@@ -27,7 +37,7 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void assertThatPointsIsFourWithOneWinAndOneDraw() {
-		SoccerTeam underTest = new SoccerTeam("Columbus Crew", 1, 1);
+		underTest = new SoccerTeam("", 1, 1);
 		int check = underTest.seasonPointTotal();
 
 		assertEquals(4, check);
@@ -35,7 +45,7 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void assertThatColumbus2017SeasonalPointTotalWas54() {
-		SoccerTeam underTest = new SoccerTeam("Columbus Crew", 16, 6);
+		underTest = new SoccerTeam("Columbus Crew", 16, 6);
 		int check = underTest.seasonPointTotal();
 
 		assertEquals(54, check);
@@ -43,8 +53,8 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void assertThatSeasonPointTotalsAreSame() {
-		SoccerTeam underTest = new SoccerTeam("Team 1", 1, 1);
-		SoccerTeam underTest2 = new SoccerTeam("Team 2", 1, 1);
+		underTest = new SoccerTeam("", 1, 1);
+		underTest2 = new SoccerTeam("", 1, 1);
 		int check = underTest.compareTo(underTest2);
 
 		assertEquals(0, check);
@@ -52,8 +62,8 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void assertThatSeasonPointTotalIsOfLowerRank() {
-		SoccerTeam underTest = new SoccerTeam("Team 1", 1, 2);
-		SoccerTeam underTest2 = new SoccerTeam("Team 2", 1, 1);
+		underTest = new SoccerTeam("", 1, 2);
+		underTest2 = new SoccerTeam("", 1, 1);
 		int check = underTest.compareTo(underTest2);
 
 		assertEquals(-1, check);
@@ -61,8 +71,8 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void assertThatSeasonPointTotalIsOfHigherRank() {
-		SoccerTeam underTest = new SoccerTeam("Team 1", 1, 1);
-		SoccerTeam underTest2 = new SoccerTeam("Team 2", 1, 2);
+		underTest = new SoccerTeam("", 1, 1);
+		underTest2 = new SoccerTeam("", 1, 2);
 		int check = underTest.compareTo(underTest2);
 
 		assertEquals(1, check);
@@ -70,8 +80,8 @@ public class SoccerPlayoffTests {
 
 	@Test
 	public void assertThatMoreWinsBreaksSeasonalPointTotalTie() {
-		SoccerTeam underTest = new SoccerTeam("Team 1", 1, 3);
-		SoccerTeam underTest2 = new SoccerTeam("Team 2", 2, 0);
+		underTest = new SoccerTeam("", 1, 3);
+		underTest2 = new SoccerTeam("", 2, 0);
 		int check = underTest.compareTo(underTest2);
 
 		assertEquals(1, check);
@@ -96,7 +106,7 @@ public class SoccerPlayoffTests {
 		assertEquals("Columbus", league.getTeamName(2));
 
 	}
-	
+
 	@Test
 	public void sortBySeasonPointTotalWithWinsTieBreakerBetweenTorontoAndNy() {
 		SoccerTeam columbus = new SoccerTeam("Columbus", 1, 2);
