@@ -22,4 +22,10 @@ public class League {
 		return teamName;
 	}
 
+	public ArrayList<SoccerTeam> getTeams() {
+		return teams;
+	}
+	
+	
+
 }

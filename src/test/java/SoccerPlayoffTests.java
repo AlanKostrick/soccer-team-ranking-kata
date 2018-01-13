@@ -1,3 +1,4 @@
+import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -105,6 +106,9 @@ public class SoccerPlayoffTests {
 		assertEquals("NY", league.getTeamName(1));
 		assertEquals("Columbus", league.getTeamName(2));
 
+		// or done by using matchers contains instead
+		assertThat(league.getTeams(), contains(toronto, ny, columbus));
+
 	}
 
 	@Test
@@ -124,6 +128,9 @@ public class SoccerPlayoffTests {
 		assertEquals("Toronto", league.getTeamName(0));
 		assertEquals("NY", league.getTeamName(1));
 		assertEquals("Columbus", league.getTeamName(2));
+
+		// or done by using matchers contains instead
+		assertThat(league.getTeams(), contains(toronto, ny, columbus));
 
 	}
 
