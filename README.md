@@ -21,8 +21,8 @@ Your job is to create an application that sorts teams in order based on points.
 
 **The following tests have been created:**
 
-1. Create a Soccer Team
-2. Create a Soccer Team with Data
+1. Create a Default Soccer Team
+2. Create a Soccer Team with Data (Team Name, Wins, Ties)
 3. 3 Points should be given to a team with 1 win
 4. 4 Points should be given to a team with 1 win and 1 tie
 5. Columbus Crew should be awarded 54 points for a 16 win 6 tie season
