@@ -1,4 +1,4 @@
-## A Soccer Scoring Kata
+## A Soccer Ranking Kata
 
 In Major League Soccer, the top 6 ranked teams in each conference make the play-offs.
 
